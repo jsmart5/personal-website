@@ -1,0 +1,79 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the burger component.
+// -----------------------------------------------------------------------------
+
+.burger-menu {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  transition: all 500ms;
+}
+
+.burger-menu.open:before {
+  margin-top: -1px;
+  top: 50%;
+  transform: rotate(45deg);
+  transition: all 240ms, top 600ms, transform 600ms 600ms;
+}
+
+.burger-menu.open:after {
+  margin-bottom: -1px;
+  bottom: 50%;
+  transform: rotate(-45deg);
+  transition: all 240ms, bottom 600ms, transform 600ms 600ms;
+}
+
+.burger-menu.open span {
+  background-color: transparent;
+}
+
+.burger-menu span,
+.burger-menu:after,
+.burger-menu:before {
+  content: '';
+  background: white;
+  height: 2px;
+  display: block;
+  position: absolute;
+  width: 50%;
+  left: 25%;
+}
+
+.burger-menu span {
+  top: 50%;
+  margin-top: -1px;
+  transition: background-color;
+  transition-delay: 500ms;
+}
+
+.burger-menu:before {
+  top: 33%;
+  transition: all 240ms, top 600ms 600ms, transform 600ms;
+}
+
+.burger-menu:after {
+  bottom: 33%;
+  transition: all 240ms, bottom 600ms 600ms, transform 600ms;
+}
+
+.burger-wrapper {
+  width: 55px;
+  height: 55px;
+  will-change: transform;
+}
+
+.burger-menu:hover {
+  background: #698997;
+  box-shadow: 0 0 11px 0 rgba(0,0,0,0.18),0 0 15px 0 rgba(0,0,0,0.15);
+}
+
+.burger-menu {
+  background: #567582;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.16),0 0 10px 0 rgba(0,0,0,0.12);
+}
+
+.burger-menu.open {
+  transform: rotate(-360deg);
+}
